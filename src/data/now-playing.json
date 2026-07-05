@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "De la Monarquía a la Criptocracia",
+  "artist": "Triángulo de Amor Bizarro",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273e7190490e824e7d89bd3f546",
+  "progress": 10
 }
