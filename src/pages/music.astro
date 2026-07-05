@@ -16,7 +16,7 @@ const data = nowPlayingData as NowPlayingData;
 const nowPlaying = {
   song: data.isPlaying ? data.song : "Nada suena ahora mismo",
   artist: data.isPlaying ? data.artist : "Spotify",
-  albumArt: data.isPlaying ? data.albumArt : "/images/un_soplo_en_el_corazon.webp",
+  albumArt: data.isPlaying ? data.albumArt : "/blog/images/un_soplo_en_el_corazon.webp",
   progress: data.isPlaying ? data.progress : 0,
 };
 
@@ -33,7 +33,7 @@ const renderedPosts = await Promise.all(
 );
 ---
 
-<BaseLayout backgroundImage="images/waves_background.jpg">
+<BaseLayout backgroundImage="/blog/images/waves_background.jpg">
     <div class="player">
       <p class="player-title">What am I listening to right now?</p>
       <div class="player-screen">
