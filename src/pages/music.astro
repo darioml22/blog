@@ -80,7 +80,7 @@ const renderedPosts = await Promise.all(
     <div class="posts-feed">
       {renderedPosts.map(({ post, Content }) => (
         <article class="post-card">
-          <h2>{post.data.title}</h2>
+          <h2 class="post-title">{post.data.title}</h2>
           {post.data.artist && <p class="artist">{post.data.artist}</p>}
           <p class="post-type">{post.data.type === 'review' ? 'Review' : 'Recomendación'}</p>
           <div class="post-content">
@@ -176,11 +176,18 @@ const renderedPosts = await Promise.all(
     box-shadow: 0 1px 1px rgba(0,0,0,0.3);
   }
 
+  .post-title {
+    font-family: 'Orbitron', system-ui;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
   .posts-feed {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     margin-top: 3rem;
+    font-family: 'Nunito', system-ui;
   }
 
   .post-card {

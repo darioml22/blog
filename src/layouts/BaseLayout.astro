@@ -12,7 +12,7 @@ const base = import.meta.env.BASE_URL;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <link href="https://fonts.googleapis.com/css2?family=Frijole&family=Nunito&family=Quicksand:wght@400;700&family=VT323&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Frijole&family=Nunito&family=Orbitron&family=Quicksand:wght@400;700&family=VT323&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <title>Dario's Blog</title>
   </head>
@@ -24,13 +24,31 @@ const base = import.meta.env.BASE_URL;
   </body>
 </html>
 
-<style>
+<style define:vars={{
+    cursorNormal: `url('${base}/images/cursor2.gif'), auto`,
+    cursorHover: `url('${base}/images/iron-ingot.png'), pointer`,
+    cursorClick: `url('${base}/images/crafting-table.png'), pointer`
+  }}>
   main {
     margin-left: var(--sidebar-width);
     padding: 4rem;
+    padding-right: 20rem;
+    padding-left: 20rem;
     min-height: 100vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+  }
+
+  body {
+    cursor: var(--cursorNormal);
+  }
+
+  :global(a), :global(button) {
+    cursor: var(--cursorHover);
+  }
+
+  :global(a:active), :global(button:active) {
+    cursor: var(--cursorClick);
   }
 </style>

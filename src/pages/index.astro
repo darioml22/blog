@@ -1,15 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+const base = import.meta.env.BASE_URL;
 import "../styles/global.css";
 ---
 
 
 <BaseLayout backgroundImage="/blog/images/paper_background.jpg">
+  <img src={`${base}/images/cursor.gif`} alt="" class="floating-gif gif-1" />
 		<div class="blog">
 			<h1 class="title">Welcome to my blog!</h1>
 			<section class="three-col">
 				<div class="col">
-					<img src="/blog/images/bass.png" alt="description" height="400" width="400" class="wiggle-image"/>
+					<img src="/blog/images/bass.png" alt="description" height="200" width="200" class="wiggle-image"/>
 				</div>
 				<div class="col">
 					<div class="description">
@@ -17,7 +19,7 @@ import "../styles/global.css";
 					</div>
 				</div>
 				<div class="col">
-					<img src="/blog/images/guitar.png" alt="description" height="400" width="124" class="wiggle-image"/>
+					<img src="/blog/images/guitar.png" alt="description" height="200" width="62" class="wiggle-image"/>
 				</div>
 			</section>
 		</div>
@@ -45,12 +47,12 @@ import "../styles/global.css";
   }
 
   .title {
-    font-family: 'orbitron', system-ui;
+    font-family: 'Orbitron', system-ui;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6), 0 2px 4px rgba(0,0,0,0.15);
   }
 
   .description {
-	font-family: 'nunito', system-ui;
+	font-family: 'Nunito', system-ui;
 	font-size: 1.4rem;
     margin-top: 4rem;
   }
@@ -73,4 +75,52 @@ import "../styles/global.css";
 		transform: rotate(5deg);
 	}
   }
+
+  .floating-gif {
+  position: fixed;
+  width: 40px;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.gif-1 {
+  top: 10%;
+  left: 5%;
+  animation: fly1 15s linear infinite;
+}
+
+/*.gif-2 {
+  top: 60%;
+  left: 70%;
+  animation: fly2 20s linear infinite;
+}
+
+.gif-3 {
+  top: 30%;
+  left: 40%;
+  animation: fly3 12s linear infinite;
+}*/
+
+@keyframes fly1 {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(60vw, 20vh); }
+  50%  { transform: translate(20vw, 50vh); }
+  75%  { transform: translate(70vw, 10vh); }
+  100% { transform: translate(0, 0); }
+}
+/*
+@keyframes fly2 {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-40vw, 30vh); }
+  50%  { transform: translate(-60vw, -20vh); }
+  75%  { transform: translate(-10vw, -40vh); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes fly3 {
+  0%   { transform: translate(0, 0); }
+  33%  { transform: translate(30vw, -20vh); }
+  66%  { transform: translate(-20vw, 30vh); }
+  100% { transform: translate(0, 0); }
+}*/
 </style>
