@@ -1,0 +1,266 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+
+const nowPlaying = {
+  song: "Martín se ha ido para siempre",
+  artist: "Family",
+  albumArt: "/images/un_soplo_en_el_corazon.webp",
+  progress: 40,
+};
+
+const musicPosts = await getCollection('music');
+const sortedPosts = musicPosts.sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const renderedPosts = await Promise.all(
+  sortedPosts.map(async (post) => {
+    const { Content } = await render(post);
+    return { post, Content };
+  })
+);
+---
+
+<BaseLayout backgroundImage="/images/waves_background.jpg">
+    <div class="player">
+      <p class="player-title">What am I listening to right now?</p>
+      <div class="player-screen">
+          <img src={nowPlaying.albumArt} alt="Album art" class="album-art" />
+          <div class="track-info">
+          <p class="song-name">{nowPlaying.song}</p>
+          <p class="artist-name">{nowPlaying.artist}</p>
+          </div>
+      </div>
+
+      <div class="progress-track">
+          <div class="progress-fill" style={`width: ${nowPlaying.progress}%`}></div>
+      </div>
+
+        <div class="controls">
+            <button class="glossy-button" id="btnPrev">
+                <i class="fa-solid fa-backward-step"></i>
+            </button>
+            <button class="glossy-button" id="btnPause">
+                <i class="fa-solid fa-pause"></i>
+            </button>
+            <button class="glossy-button" id="btnNext">
+                <i class="fa-solid fa-forward-step"></i>
+            </button>
+        </div>
+        
+      <p id="displayWarning" class="warning-text"></p>
+
+    </div>
+
+    <div id="displayPopup" class="popup-overlay">
+      <div class="popup-window">
+        <div class="popup-titlebar">
+          <span>System Message</span>
+          <button id="closePopup" class="popup-close">✕</button>
+        </div>
+        <div class="popup-body">
+          <p>This buttons are just for display, retard</p>
+          <button id="popupOk" class="glossy-button">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="posts-feed">
+      {renderedPosts.map(({ post, Content }) => (
+        <article class="post-card">
+          <h2>{post.data.title}</h2>
+          {post.data.artist && <p class="artist">{post.data.artist}</p>}
+          <p class="post-type">{post.data.type === 'review' ? 'Review' : 'Recomendación'}</p>
+          <div class="post-content">
+            <Content />
+          </div>
+        </article>
+      ))}
+    </div>
+ </BaseLayout>
+
+<style>
+  .player {
+    max-width: 320px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: repeating-linear-gradient(
+      to bottom,
+      #d4d4d4,
+      #d4d4d4 1px,
+      #c8c8c8 2px
+    );
+    border: 2px solid #999;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.8);
+  }
+
+  .player-screen {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #003300;
+    border-radius: 8px;
+    padding: 0.75rem;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.6);
+    margin-bottom: 1rem;
+  }
+
+  .album-art {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    object-fit: cover;
+  }
+
+  .song-name {
+    font-family: 'VT323', monospace;
+    color: #66ff66;
+    text-shadow: 0 0 5px #66ff66;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+
+  .artist-name {
+    font-family: 'VT323', monospace;
+    color: #44cc44;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+
+  .progress-track {
+    background: #333;
+    border-radius: 20px;
+    height: 12px;
+    box-shadow: inset 0 2px 3px rgba(0,0,0,0.6);
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+
+  .progress-fill {
+    background: linear-gradient(to bottom, #7fdbff 0%, #0077b6 100%);
+    height: 100%;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+  }
+
+  .controls {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .glossy-button {
+    font-size: 1.1rem;
+    padding: 0.5rem 0.9rem;
+    border-radius: 8px;
+    background: linear-gradient(to bottom, #ffffff 0%, #d9d9d9 50%, #b8b8b8 51%, #a0a0a0 100%);
+    border: 1px solid #888;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.6);
+    cursor: pointer;
+  }
+
+  .glossy-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  }
+
+  .posts-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .post-card {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  .popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.popup-overlay.show {
+  display: flex;
+}
+
+.popup-window {
+  width: 320px;
+  overflow: hidden;
+  border: 2px solid #999;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.6);
+  background: rgba(192, 192, 192);
+}
+
+.popup-titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  background: rgba(2, 0, 161);
+  color: white;
+  font-family: 'VT323', system-ui;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+  .popup-close {
+    background: linear-gradient(to bottom, #ff6b6b, #cc0000);
+    border: 1px solid #900;
+    color: white;
+    width: 20px;
+    height: 20px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  .popup-body {
+    padding: 1.5rem;
+    text-align: center;
+    font-family: 'VT323', system-ui;
+    font-size: 1.2rem;
+  }
+
+  .popup-body p {
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+
+  .player-title {
+    font-family: 'VT323', system-ui;
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+  }
+
+</style>
+
+<script>
+  const buttons = document.querySelectorAll('#btnPrev, #btnPause, #btnNext');
+  const popup = document.getElementById('displayPopup');
+  const closeBtn = document.getElementById('closePopup');
+  const okBtn = document.getElementById('popupOk');
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      popup.classList.add('show');
+    });
+  });
+
+  const closePopup = () => popup.classList.remove('show');
+
+  closeBtn.addEventListener('click', closePopup);
+  okBtn.addEventListener('click', closePopup);
+</script>

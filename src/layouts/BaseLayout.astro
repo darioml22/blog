@@ -1,0 +1,35 @@
+---
+import Header from "../components/Header.astro";
+import "../styles/global.css";
+
+const { backgroundImage = "/images/waves_background.jpg" } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link href="https://fonts.googleapis.com/css2?family=Frijole&family=Nunito&family=Quicksand:wght@400;700&family=VT323&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <title>Dario's Blog</title>
+  </head>
+  <body>
+    <Header />
+    <main style={`background-image: url('${backgroundImage}')`}>
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style>
+  main {
+    margin-left: var(--sidebar-width);
+    padding: 4rem;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+</style>

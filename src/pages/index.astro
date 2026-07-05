@@ -1,17 +1,76 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/global.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+
+<BaseLayout backgroundImage="/images/paper_background.jpg">
+		<div class="blog">
+			<h1 class="title">Welcome to my blog!</h1>
+			<section class="three-col">
+				<div class="col">
+					<img src="/images/bass.png" alt="description" height="400" width="400" class="wiggle-image"/>
+				</div>
+				<div class="col">
+					<div class="description">
+						<p>In this blog, I will be posting some stuff I find interesting. Such as the music I'm currently into, my youtube videos, some graphic design work or some stuff I find inspiring </p>
+					</div>
+				</div>
+				<div class="col">
+					<img src="/images/guitar.png" alt="description" height="400" width="124" class="wiggle-image"/>
+				</div>
+			</section>
+		</div>
+</BaseLayout>	
+
+
+<style>
+
+  .blog {
+    min-height: 80vh;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 16px;
+
+    background: linear-gradient(
+      to bottom,
+      rgba(245, 243, 244, 0.85) 0%,
+      rgba(102, 7, 8, 0.7) 100%
+    );
+    border: 2px solid rgba(245, 243, 244, 0.6);
+    box-shadow:
+      0 8px 24px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8),
+      inset 0 -2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .title {
+    font-family: 'orbitron', system-ui;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6), 0 2px 4px rgba(0,0,0,0.15);
+  }
+
+  .description {
+	font-family: 'nunito', system-ui;
+	font-size: 1.4rem;
+    margin-top: 4rem;
+  }
+
+  .three-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+  }
+
+  .wiggle-image {
+    animation: wiggle 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes wiggle {
+    0% {
+    transform: rotate(-5deg);
+	}
+	100% {
+		transform: rotate(5deg);
+	}
+  }
+</style>
