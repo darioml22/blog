@@ -1,12 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection, render, type CollectionEntry } from 'astro:content';
+import nowPlayingData from '../data/now-playing.json';
+
+type NowPlayingData = {
+  isPlaying: boolean;
+  song?: string;
+  artist?: string;
+  albumArt?: string;
+  progress?: number;
+};
+
+const data = nowPlayingData as NowPlayingData;
 
 const nowPlaying = {
-  song: "Martín se ha ido para siempre",
-  artist: "Family",
-  albumArt: "/images/un_soplo_en_el_corazon.webp",
-  progress: 40,
+  song: data.isPlaying ? data.song : "Nada suena ahora mismo",
+  artist: data.isPlaying ? data.artist : "Spotify",
+  albumArt: data.isPlaying ? data.albumArt : "/images/un_soplo_en_el_corazon.webp",
+  progress: data.isPlaying ? data.progress : 0,
 };
 
 const musicPosts = await getCollection('music');
