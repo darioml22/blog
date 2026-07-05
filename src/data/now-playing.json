@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "Falsos Mitos Sobre la Piel y el Cabello",
-  "artist": "La Costa Brava",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b27398a13bfedff2d581498c3b4b",
-  "progress": 66
+  "isPlaying": false
 }
