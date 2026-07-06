@@ -1,33 +1,190 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from 'astro:content';
+
+const base = import.meta.env.BASE_URL;
+
+const artPosts = await getCollection('art');
+const sortedArt = artPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<BaseLayout>
-    <div class="div">
-        <h1>WORK IN PROGRESS...</h1>
+<BaseLayout backgroundImage="/images/waves_background.jpg">
+  <h1 class="page-title">Art</h1>
+
+  <div class="collage">
+    {sortedArt.map((piece) => (
+      <div class="art-item" data-title={piece.data.title} data-description={piece.data.description || ''}>
+        <img src={`${base}${piece.data.image}`} alt={piece.data.title} />
+        <div class="hover-label">{piece.data.title}</div>
+      </div>
+    ))}
+  </div>
+
+  <div id="artPopup" class="popup-overlay">
+    <div class="popup-window">
+      <div class="popup-titlebar">
+        <span id="popupTitle"></span>
+        <button id="closeArtPopup" class="popup-close">✕</button>
+      </div>
+      <div class="popup-body">
+        <img id="popupImage" src="" alt="" class="popup-image" />
+        <p id="popupDescription"></p>
+      </div>
     </div>
+  </div>
 </BaseLayout>
 
 <style>
-    .div {
-        min-height: 80vh;
-        padding: 2rem;
-        text-align: center;
-        border-radius: 16px;
+  .page-title {
+    font-family: 'Orbitron', system-ui;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #222;
+  }
 
-        background: linear-gradient(
-        to bottom,
-        rgba(245, 243, 244, 0.85) 0%,
-        rgba(102, 7, 8, 0.7) 100%
-        );
-        border: 2px solid rgba(245, 243, 244, 0.6);
-        box-shadow:
-        0 8px 24px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8),
-        inset 0 -2px 6px rgba(0, 0, 0, 0.1);
-        }
-    .h1 {
-        font-family: 'orbitron', system-ui;
-        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6), 0 2px 4px rgba(0,0,0,0.15);
-    }
+  .collage {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    column-count: 3;
+    column-gap: 1rem;
+  }
+
+  .art-item {
+    position: relative;
+    margin-bottom: 1rem;
+    break-inside: avoid;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .art-item img {
+    width: 100%;
+    display: block;
+  }
+
+  .hover-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-family: 'Nunito', system-ui;
+    font-size: 0.85rem;
+    padding: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    text-align: center;
+  }
+
+  .art-item:hover .hover-label {
+    opacity: 1;
+  }
+
+  @media (max-width: 900px) {
+    .collage { column-count: 2; }
+  }
+  @media (max-width: 600px) {
+    .collage { column-count: 1; }
+  }
+
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+  }
+
+  .popup-overlay.show {
+    display: flex;
+  }
+
+  .popup-window {
+    width: 400px;
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid #999;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background: #ececec;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .popup-titlebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    background: linear-gradient(to bottom, #5a9fd4, #1e5c99);
+    color: white;
+    font-family: 'Nunito', system-ui;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  .popup-close {
+    background: linear-gradient(to bottom, #ff6b6b, #cc0000);
+    border: 1px solid #900;
+    border-radius: 3px;
+    color: white;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .popup-body {
+    padding: 1.5rem;
+    text-align: center;
+    font-family: 'Nunito', system-ui;
+    overflow-y: auto;
+  }
+
+  .popup-image {
+    max-width: 100%;
+    max-height: 50vh;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
 </style>
+
+<script>
+  const artItems = document.querySelectorAll('.art-item')!;
+  const popup = document.getElementById('artPopup')!;
+  const popupTitle = document.getElementById('popupTitle')!;
+  const popupImage = document.getElementById('popupImage')!;
+  const popupDescription = document.getElementById('popupDescription')!;
+  const closeBtn = document.getElementById('closeArtPopup')!;
+
+  artItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      const title = item.getAttribute('data-title')!;
+      const description = item.getAttribute('data-description')!;
+      const img = item.querySelector('img')!;
+
+      popupTitle.textContent = title;
+      popupDescription.textContent = description;
+      popupImage.setAttribute('src', img.getAttribute('src')!);
+      popup.classList.add('show');
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    popup.classList.remove('show');
+  });
+
+  popup.addEventListener('click', (e) => {
+    if (e.target === popup) {
+      popup.classList.remove('show');
+    }
+  });
+</script>

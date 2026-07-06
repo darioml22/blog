@@ -110,6 +110,9 @@ const renderedPosts = await Promise.all(
         </article>
       ))}
     </div>
+    <div class="rolling-zone">
+      <img src={`${base}/images/collectibles/Wall-nut.svg`} alt="" class="wallnut" data-pvz-id="wallnut"/>
+    </div>
  </BaseLayout>
 
 <style>
@@ -308,29 +311,29 @@ const renderedPosts = await Promise.all(
   z-index: 100;
 }
 
-.popup-overlay.show {
-  display: flex;
-}
+  .popup-overlay.show {
+    display: flex;
+  }
 
-.popup-window {
-  width: 320px;
-  overflow: hidden;
-  border: 2px solid #999;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.6);
-  background: rgba(192, 192, 192);
-}
+  .popup-window {
+    width: 320px;
+    overflow: hidden;
+    border: 2px solid #999;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.6);
+    background: rgba(192, 192, 192);
+  }
 
-.popup-titlebar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5rem 0.75rem;
-  background: rgba(2, 0, 161);
-  color: white;
-  font-family: 'VT323', system-ui;
-  font-weight: bold;
-  font-size: 1.2rem;
-}
+  .popup-titlebar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    background: rgba(2, 0, 161);
+    color: white;
+    font-family: 'VT323', system-ui;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
 
   .popup-close {
     background: linear-gradient(to bottom, #ff6b6b, #cc0000);
@@ -361,13 +364,38 @@ const renderedPosts = await Promise.all(
     padding-bottom: 0.5rem;
   }
 
+  .rolling-zone {
+    position: relative;
+    height: 80px;     
+    overflow: hidden;  
+  }
+
+  .wallnut {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 20px;
+    animation: roll 6s linear infinite alternate;
+  }
+
+  @keyframes roll {
+    0% {
+      left: 0;
+      transform: rotate(0deg);
+    }
+    100% {
+      left: calc(100% - 60px);
+      transform: rotate(1080deg);
+    }
+  }
+
 </style>
 
 <script>
-  const buttons = document.querySelectorAll('#btnPrev, #btnPause, #btnNext');
-  const popup = document.getElementById('displayPopup');
-  const closeBtn = document.getElementById('closePopup');
-  const okBtn = document.getElementById('popupOk');
+  const buttons = document.querySelectorAll('#btnPrev, #btnPause, #btnNext')!;
+  const popup = document.getElementById('displayPopup')!;
+  const closeBtn = document.getElementById('closePopup')!;
+  const okBtn = document.getElementById('popupOk')!;
 
   buttons.forEach((button) => {
     button.addEventListener('click', () => {

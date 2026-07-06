@@ -19,12 +19,6 @@ const base = import.meta.env.BASE_URL;
     <header class="pvz-header">
       <h1 class="pvz-title">Bullshit Page</h1>
 
-      <div class="pvz-counter" aria-label="progreso de la colección">
-        <span id="pvz-counter-current" class="pvz-counter-digits">000</span>
-        <span class="pvz-counter-slash">/</span>
-        <span class="pvz-counter-digits">{String(COLLECTIBLES.length).padStart(3, "0")}</span>
-        <span class="pvz-counter-label">encontrados</span>
-      </div>
     </header>
 
     <div class="pvz-album" id="pvz-album">
@@ -111,38 +105,6 @@ const base = import.meta.env.BASE_URL;
     color: var(--wood-deep);
     text-shadow: 2px 2px 0 var(--sun);
     margin: 0;
-  }
-
-  /* El "contador de visitas" ochentero/noventero, aquí como contador de figuras */
-  .pvz-counter {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: #111;
-    border: 3px solid var(--wood-deep);
-    border-radius: 4px;
-    padding: 6px 10px;
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.8);
-  }
-
-  .pvz-counter-digits {
-    font-family: "Press Start 2P", monospace;
-    font-size: 14px;
-    color: #4dff4d;
-    text-shadow: 0 0 6px #4dff4d;
-    letter-spacing: 2px;
-  }
-
-  .pvz-counter-slash {
-    color: #4dff4d;
-    opacity: 0.6;
-  }
-
-  .pvz-counter-label {
-    font-family: "Trebuchet MS", Verdana, sans-serif;
-    font-size: 11px;
-    color: #9fd89f;
-    margin-left: 6px;
   }
 
   .pvz-hint {
@@ -313,11 +275,6 @@ const base = import.meta.env.BASE_URL;
         slot.classList.add("pvz-found");
       }
     });
-
-    const counterEl = document.getElementById("pvz-counter-current");
-    if (counterEl) {
-      counterEl.textContent = String(collected.size).padStart(3, "0");
-    }
 
     const locked = document.getElementById("pvz-locked");
     const gameWrap = document.getElementById("pvz-game-wrap");

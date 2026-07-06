@@ -55,10 +55,25 @@
 <script>
   import { collect, isCollected, resetCollection } from "../lib/storage.js";
 
+  // 🧪 MODO PRUEBAS: pon esto en false cuando quieras que el progreso
+  // se guarde de verdad entre recargas de página.
   const RESET_ON_LOAD = false;
 
   if (RESET_ON_LOAD) {
     resetCollection();
+  }
+
+  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+  const collectSound = new Audio(`${base}/audio/plants-vs-zombies-sun-pickup.mp3`);
+
+  function playCollectSound() {
+    // reiniciamos el audio por si se hace click varias veces seguidas
+    collectSound.currentTime = 0;
+    collectSound.play().catch(() => {
+      // los navegadores pueden bloquear el audio si no hubo interacción
+      // previa del usuario; como esto se dispara en un click, normalmente
+      // no debería pasar, pero lo capturamos para que no rompa nada.
+    });
   }
 
   function showToast(text: string) {
@@ -80,7 +95,6 @@
     const id = el.dataset.pvzId;
     if (!id) return;
 
-    // Ya lo tenía -> lo ocultamos directamente, sin animación.
     if (isCollected(id)) {
       el.style.display = "none";
       return;
@@ -92,8 +106,8 @@
       if (!isNew) return;
 
       showToast("¡Objeto encontrado! Añadido a tu colección");
+      playCollectSound();
       el.classList.add("pvz-collecting");
-      // esperamos a que acabe el fade antes de sacarlo del flujo
       window.setTimeout(() => {
         el.style.display = "none";
       }, 400);
@@ -106,7 +120,6 @@
       .forEach((el) => wire(el));
   }
 
-  // por si usas transiciones de vistas de Astro
   document.addEventListener("astro:page-load", init);
   init();
 </script>

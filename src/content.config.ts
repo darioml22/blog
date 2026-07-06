@@ -15,4 +15,14 @@ const music = defineCollection({
   }),
 });
 
-export const collections = { music };
+const art = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/art' }),
+  schema: z.object({
+    title: z.string(),
+    image: z.string(),
+    date: z.date(),
+    description: z.string().optional(),
+  }),
+});
+
+export const collections = { music, art };

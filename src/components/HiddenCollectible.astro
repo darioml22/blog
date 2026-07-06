@@ -143,7 +143,7 @@ const { id, image, top = "50%", left = "50%", size = "38px" } = Astro.props;
         const isNew = collect(id);
         if (isNew) {
           btn.classList.add("pvz-found");
-          showToast(`¡Objeto encontrado! Añadido a tu colección`);
+          showToast(`You found a collectible!`);
         }
       });
     });
