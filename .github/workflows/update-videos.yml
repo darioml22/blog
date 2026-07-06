@@ -1,0 +1,35 @@
+name: Update Videos
+
+on:
+  schedule:
+    - cron: '0 */12 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Fetch videos
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          YOUTUBE_CHANNEL_ID: ${{ secrets.YOUTUBE_CHANNEL_ID }}
+        run: node scripts/fetch-videos.js
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/videos.json
+          git diff --staged --quiet || git commit -m "Update videos"
+          git push

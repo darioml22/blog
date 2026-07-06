@@ -9,10 +9,10 @@ const base = import.meta.env.BASE_URL;
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href={`${base}/Super8-circle.png`} />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <link href="https://fonts.googleapis.com/css2?family=Frijole&family=Nunito&family=Orbitron&family=Quicksand:wght@400;700&family=VT323&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Frijole&family=Nunito&family=Orbitron&family=Play:wght@400;700&family=Quicksand:wght@400;700&family=VT323&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <title>Dario's Blog</title>
   </head>
@@ -35,9 +35,8 @@ const base = import.meta.env.BASE_URL;
     padding-right: 20rem;
     padding-left: 20rem;
     min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
+    background-size: 500px 500px;
   }
 
   body {

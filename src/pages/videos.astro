@@ -1,33 +1,129 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import videosData from '../data/videos.json';
+
+const base = import.meta.env.BASE_URL;
+
+type Video = {
+  title: string;
+  videoId: string;
+  thumbnail: string;
+  publishedAt: string;
+};
+
+const videos = videosData as Video[];
 ---
 
-<BaseLayout>
-    <div class="div">
-        <h1>WORK IN PROGRESS...</h1>
-    </div>
+<BaseLayout backgroundImage="/images/waves_background.jpg">
+  <h1 class="page-title">My Videos</h1>
+
+  <div class="video-grid">
+    {videos.map((video) => (
+      <a
+        href={`https://www.youtube.com/watch?v=${video.videoId}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="video-card"
+      >
+        <div class="thumbnail-wrapper">
+          <img src={video.thumbnail} alt={video.title} class="thumbnail" />
+          <div class="play-overlay">
+            <i class="fa-solid fa-play"></i>
+          </div>
+        </div>
+        <p class="video-title">{video.title}</p>
+        <p class="video-date">
+          {new Date(video.publishedAt).toLocaleDateString()}
+        </p>
+      </a>
+    ))}
+  </div>
 </BaseLayout>
 
 <style>
-    .div {
-        min-height: 80vh;
-        padding: 2rem;
-        text-align: center;
-        border-radius: 16px;
+  .page-title {
+    font-family: 'Orbitron', system-ui;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+  }
 
-        background: linear-gradient(
-        to bottom,
-        rgba(245, 243, 244, 0.85) 0%,
-        rgba(102, 7, 8, 0.7) 100%
-        );
-        border: 2px solid rgba(245, 243, 244, 0.6);
-        box-shadow:
-        0 8px 24px rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8),
-        inset 0 -2px 6px rgba(0, 0, 0, 0.1);
-        }
-    .h1 {
-        font-family: 'orbitron', system-ui;
-        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6), 0 2px 4px rgba(0,0,0,0.15);
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .video-card {
+    text-decoration: none;
+    color: inherit;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+  }
+
+  .video-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .thumbnail-wrapper {
+    position: relative;
+  }
+
+  .thumbnail {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .video-card:hover .play-overlay {
+    opacity: 1;
+  }
+
+  .video-title {
+    font-family: 'Nunito', system-ui;
+    font-weight: bold;
+    padding: 0.75rem 1rem 0.25rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .video-date {
+    font-family: 'Nunito', system-ui;
+    color: #777;
+    font-size: 0.8rem;
+    padding: 0 1rem 1rem 1rem;
+  }
+
+  @media (max-width: 900px) {
+    .video-grid {
+      grid-template-columns: repeat(2, 1fr);
     }
+  }
+
+  @media (max-width: 600px) {
+    .video-grid {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>
