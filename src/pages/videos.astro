@@ -14,7 +14,7 @@ type Video = {
 const videos = videosData as Video[];
 ---
 
-<BaseLayout backgroundImage="/images/waves_background.jpg">
+<BaseLayout backgroundImage="/blog/images/buildings_background_2.jpg">
   <h1 class="page-title">My Videos</h1>
 
   <div class="video-grid">
@@ -46,6 +46,7 @@ const videos = videosData as Video[];
     text-align: center;
     margin-bottom: 2rem;
     color: #333;
+    background: rgba(255, 255, 255, 0.85);
   }
 
   .video-grid {
@@ -58,7 +59,6 @@ const videos = videosData as Video[];
     text-decoration: none;
     color: inherit;
     background: rgba(255, 255, 255, 0.85);
-    border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     transition: transform 0.2s ease;

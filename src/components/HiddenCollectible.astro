@@ -1,0 +1,154 @@
+---
+// src/components/HiddenCollectible.astro
+//
+// Úsalo en cualquier página del blog para esconder una figura.
+// Ejemplo:
+// <HiddenCollectible id="sunflower" image="/images/collectibles/sunflower.png" top="40%" left="8%" />
+//
+// Puedes ponerlo dentro de un post, en el sidebar, detrás de una palabra
+// del texto, en el footer... donde quieras. El componente se encarga de:
+// - mostrarse "camuflado" (baja opacidad) hasta que pasas el ratón / lo tocas
+// - marcarlo como recogido en localStorage al hacer click
+// - no volver a mostrarlo si ya lo has recogido antes
+
+interface Props {
+  id: string;
+  image: string;
+  top?: string;
+  left?: string;
+  size?: string;
+}
+
+const { id, image, top = "50%", left = "50%", size = "38px" } = Astro.props;
+---
+
+<button
+  class="pvz-hidden"
+  data-pvz-id={id}
+  aria-label="objeto escondido"
+  style={`--pvz-top:${top}; --pvz-left:${left}; --pvz-size:${size};`}
+>
+  <img src={image} alt="" draggable="false" />
+</button>
+
+<style>
+  .pvz-hidden {
+    position: absolute;
+    top: var(--pvz-top);
+    left: var(--pvz-left);
+    width: var(--pvz-size);
+    height: var(--pvz-size);
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    opacity: 0.16;
+    filter: grayscale(60%);
+    transform: scale(1) rotate(0deg);
+    transition: opacity 0.2s ease, transform 0.2s ease, filter 0.2s ease;
+    z-index: 5;
+  }
+
+  .pvz-hidden:hover,
+  .pvz-hidden:focus-visible {
+    opacity: 0.9;
+    filter: grayscale(0%);
+    transform: scale(1.15) rotate(-4deg);
+  }
+
+  .pvz-hidden img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  .pvz-hidden.pvz-found {
+    animation: pvz-pop 0.5s ease forwards;
+    pointer-events: none;
+  }
+
+  @keyframes pvz-pop {
+    0% {
+      transform: scale(1.15);
+      opacity: 0.9;
+    }
+    60% {
+      transform: scale(1.6) rotate(15deg);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0);
+      opacity: 0;
+    }
+  }
+
+  .pvz-toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translate(-50%, 20px);
+    background: #2f2a1d;
+    color: #ffe98a;
+    border: 3px solid #ffd23f;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-family: "Press Start 2P", monospace;
+    font-size: 11px;
+    line-height: 1.5;
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    z-index: 9999;
+  }
+
+  .pvz-toast.pvz-show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+</style>
+
+<script>
+  import { collect, isCollected } from "../lib/storage.js";
+
+  function showToast(text: string) {
+    let toast = document.querySelector(".pvz-toast") as HTMLDivElement | null;
+    if (!toast) {
+      toast = document.createElement("div");
+      toast.className = "pvz-toast";
+      document.body.appendChild(toast);
+    }
+    toast.textContent = text;
+    toast.classList.add("pvz-show");
+    window.clearTimeout((toast as any)._t);
+    (toast as any)._t = window.setTimeout(() => {
+      toast?.classList.remove("pvz-show");
+    }, 2200);
+  }
+
+  function init() {
+    document.querySelectorAll<HTMLButtonElement>(".pvz-hidden").forEach((btn) => {
+      const id = btn.dataset.pvzId;
+      if (!id) return;
+
+      // Si ya lo tenía, ni lo mostramos.
+      if (isCollected(id)) {
+        btn.style.display = "none";
+        return;
+      }
+
+      btn.addEventListener("click", () => {
+        if (btn.classList.contains("pvz-found")) return;
+        const isNew = collect(id);
+        if (isNew) {
+          btn.classList.add("pvz-found");
+          showToast(`¡Objeto encontrado! Añadido a tu colección`);
+        }
+      });
+    });
+  }
+
+  document.addEventListener("astro:page-load", init);
+  init();
+</script>

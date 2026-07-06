@@ -1,0 +1,112 @@
+---
+// src/components/CollectibleEngine.astro
+//
+// Ponlo UNA VEZ en tu Layout.astro (por ejemplo justo antes de </body>).
+// A partir de ahí, CUALQUIER elemento de CUALQUIER página que tenga el
+// atributo data-pvz-id="algun-id" se vuelve recolectable automáticamente,
+// sin importar si es un <button>, un <img>, un gif que da vueltas, un div...
+// No necesita el wrapper de HiddenCollectible.astro para funcionar.
+---
+
+<style is:global>
+  [data-pvz-id] {
+    cursor: pointer;
+    /* !important porque elementos como .floating-gif suelen llevar
+       pointer-events: none para no "molestar" al pasar por encima del
+       contenido; aquí lo revertimos solo para los recolectables. */
+    pointer-events: auto !important;
+  }
+
+  /* Transición de "recogido": usamos opacity (no transform), para no pelear
+     con animaciones de movimiento (@keyframes) que el propio elemento
+     ya pueda tener, como tu gif flotante. */
+  [data-pvz-id].pvz-collecting {
+    transition: opacity 0.4s ease;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .pvz-toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translate(-50%, 20px);
+    background: #2f2a1d;
+    color: #ffe98a;
+    border: 3px solid #ffd23f;
+    border-radius: 6px;
+    padding: 10px 18px;
+    font-family: "Press Start 2P", monospace;
+    font-size: 11px;
+    line-height: 1.5;
+    box-shadow: 0 6px 0 rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    z-index: 9999;
+  }
+
+  .pvz-toast.pvz-show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+</style>
+
+<script>
+  import { collect, isCollected, resetCollection } from "../lib/storage.js";
+
+  const RESET_ON_LOAD = false;
+
+  if (RESET_ON_LOAD) {
+    resetCollection();
+  }
+
+  function showToast(text: string) {
+    let toast = document.querySelector(".pvz-toast") as HTMLDivElement | null;
+    if (!toast) {
+      toast = document.createElement("div");
+      toast.className = "pvz-toast";
+      document.body.appendChild(toast);
+    }
+    toast.textContent = text;
+    toast.classList.add("pvz-show");
+    window.clearTimeout((toast as any)._t);
+    (toast as any)._t = window.setTimeout(() => {
+      toast?.classList.remove("pvz-show");
+    }, 2200);
+  }
+
+  function wire(el: HTMLElement) {
+    const id = el.dataset.pvzId;
+    if (!id) return;
+
+    // Ya lo tenía -> lo ocultamos directamente, sin animación.
+    if (isCollected(id)) {
+      el.style.display = "none";
+      return;
+    }
+
+    el.addEventListener("click", () => {
+      if (el.classList.contains("pvz-collecting")) return;
+      const isNew = collect(id);
+      if (!isNew) return;
+
+      showToast("¡Objeto encontrado! Añadido a tu colección");
+      el.classList.add("pvz-collecting");
+      // esperamos a que acabe el fade antes de sacarlo del flujo
+      window.setTimeout(() => {
+        el.style.display = "none";
+      }, 400);
+    });
+  }
+
+  function init() {
+    document
+      .querySelectorAll<HTMLElement>("[data-pvz-id]")
+      .forEach((el) => wire(el));
+  }
+
+  // por si usas transiciones de vistas de Astro
+  document.addEventListener("astro:page-load", init);
+  init();
+</script>
