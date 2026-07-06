@@ -5,10 +5,13 @@ const music = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/music' }),
   schema: z.object({
     title: z.string(),
-    artist: z.string().optional(),
-    date: z.date(),
+    subtitle: z.string().optional(),
     type: z.enum(['review', 'recommendation']),
+    date: z.date(),
+    artist: z.string().optional(),
     coverImage: z.string().optional(),
+    photos: z.array(z.string()).optional(),
+    audio: z.string().optional(),
   }),
 });
 

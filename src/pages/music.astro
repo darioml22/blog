@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection, render, type CollectionEntry } from 'astro:content';
 import nowPlayingData from '../data/now-playing.json';
+const base = import.meta.env.BASE_URL;
 
 type NowPlayingData = {
   isPlaying: boolean;
@@ -14,9 +15,9 @@ type NowPlayingData = {
 const data = nowPlayingData as NowPlayingData;
 
 const nowPlaying = {
-  song: data.isPlaying ? data.song : "Nada suena ahora mismo",
+  song: data.isPlaying ? data.song : "Nothing playing right now",
   artist: data.isPlaying ? data.artist : "Spotify",
-  albumArt: data.isPlaying ? data.albumArt : "/blog/images/un_soplo_en_el_corazon.webp",
+  albumArt: data.isPlaying ? data.albumArt : "/blog/images/frutiger_music.jpg",
   progress: data.isPlaying ? data.progress : 0,
 };
 
@@ -81,11 +82,31 @@ const renderedPosts = await Promise.all(
       {renderedPosts.map(({ post, Content }) => (
         <article class="post-card">
           <h2 class="post-title">{post.data.title}</h2>
-          {post.data.artist && <p class="artist">{post.data.artist}</p>}
-          <p class="post-type">{post.data.type === 'review' ? 'Review' : 'Recomendación'}</p>
+          {post.data.subtitle && <h3 class="subtitle">{post.data.subtitle}</h3>}
+          <p class="post-type">{post.data.type === 'review' ? 'Review' : 'Recommendation'}</p>
+
+          {post.data.coverImage && (
+            <img src={`${base}${post.data.coverImage}`} alt={post.data.title} class="cover-image" />
+          )}
+
           <div class="post-content">
             <Content />
           </div>
+
+          {post.data.photos && post.data.photos.length > 0 && (
+            <div class="post-photos">
+              {post.data.photos.map((photo) => (
+                <img src={`${base}${photo}`} alt={post.data.title} />
+              ))}
+            </div>
+          )}
+
+          {post.data.audio && (
+            <audio controls class="post-audio">
+              <source src={`${base}${post.data.audio}`} type="audio/mpeg" />
+              Your browser does not support the audio element.
+            </audio>
+          )}
         </article>
       ))}
     </div>
@@ -176,12 +197,6 @@ const renderedPosts = await Promise.all(
     box-shadow: 0 1px 1px rgba(0,0,0,0.3);
   }
 
-  .post-title {
-    font-family: 'Orbitron', system-ui;
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem;
-  }
-
   .posts-feed {
     display: flex;
     flex-direction: column;
@@ -195,6 +210,88 @@ const renderedPosts = await Promise.all(
     border-radius: 12px;
     padding: 1.5rem;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  /* Post Cards */
+  .post-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .subtitle {
+    font-family: 'Nunito', system-ui;
+    font-weight: normal;
+    color: #666;
+    font-size: 1rem;
+    margin-top: -0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .post-type {
+    display: inline-block;
+    font-family: 'VT323', system-ui;
+    font-size: 0.9rem;
+    color: #555;
+    background: rgba(0, 0, 0, 0.08);
+    padding: 0.15rem 0.6rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+
+  .cover-image {
+    width: 100%;
+    max-width: 200px;
+    border-radius: 8px;
+    display: block;
+    margin: 0.5rem 0 1rem 0;
+  }
+
+  .post-content {
+    margin-bottom: 1rem;
+  }
+
+  .post-content :global(img) {
+    max-width: 250px;
+    border-radius: 8px;
+    display: block;
+    margin: 1rem 0;
+  }
+
+  .post-content :global(p) {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .post-content blockquote {
+    margin: 2rem 0;
+    padding-left: 1rem;
+    border-left: 3px solid #999;
+    font-style: italic;
+  }
+
+  .post-content blockquote p {
+    margin-bottom: 1rem; 
+    line-height: 1.8;    
+  }
+
+  .post-photos {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+
+  .post-photos img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .post-audio {
+    width: 100%;
+    margin-top: 1rem;
   }
 
   .popup-overlay {
