@@ -1,5 +1,17 @@
 ---
 const base = import.meta.env.BASE_URL;
+
+const path = Astro.url.pathname.replace(base, "").replace(/^\/|\/$/g, "");
+
+const gifByPage: Record<string, string> = {
+  "": "cat.gif",
+  "videos": "kino.gif",
+  "music": "guitar.gif",
+  "art": "junimo.gif",
+  "extras": "plants-vs-zombies.gif",
+};
+
+const currentGif = gifByPage[path] ?? "cat.gif"; 
 ---
 
 <header>
@@ -14,6 +26,8 @@ const base = import.meta.env.BASE_URL;
     </ul>
   </nav>
 
+  <img src={`${base}/images/${currentGif}`} alt="Gatito" class="cat-gif" />
+
   <div class="socials">
     <a href="https://www.instagram.com/dario.sucolega" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-instagram"></i>
@@ -23,6 +37,9 @@ const base = import.meta.env.BASE_URL;
     </a>
     <a href="https://open.spotify.com/user/dariomola7?si=9033a47c81ff4b74" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-spotify"></i>
+    </a>
+    <a href="https://letterboxd.com/dario_ml22/" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-letterboxd"></i>
     </a>
     </div>
 </header>
@@ -91,11 +108,13 @@ const base = import.meta.env.BASE_URL;
   .socials {
 	  display: flex;
     justify-content: center;
-    align-items: end;      
-    min-height: 300px; 
+    align-items: end;    
 	  gap: 1rem;
-    margin-top: auto;
 	}
+
+  .cat-gif {
+    margin-top: auto;
+  }
 
 	.socials a {
 	color: rgba(22, 26, 29, 0.8);
