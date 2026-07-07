@@ -4,46 +4,112 @@ const base = import.meta.env.BASE_URL;
 import "../styles/global.css";
 ---
 
-
-<BaseLayout backgroundImage="/blog/images/paper_background.jpg">
+<BaseLayout backgroundImage="/blog/images/paper_background.jpg" noScroll>
   <img
     src={`${base}/images/collectibles/Peashooter.svg`}
     alt=""
     class="floating-gif gif-1"
     data-pvz-id="peashooter"
   />
-		<div class="blog">
-			<h1 class="title">Welcome to my blog!</h1>
-			<section class="three-col">
-				<div class="col">
-					<img src="/blog/images/bass.png" alt="description" height="200" width="200" class="wiggle-image"/>
-				</div>
-				<div class="col">
-					<div class="description">
-						<p>In this blog, I will be posting some stuff I find interesting. Such as the music I'm currently into, my youtube videos, some graphic design work or some stuff I find inspiring </p>
-					</div>
-				</div>
-				<div class="col">
-					<img src="/blog/images/guitar.png" alt="description" height="200" width="62" class="wiggle-image"/>
-				</div>
-			</section>
-		</div>
+
+  <div class="page-layout">
+    <div class="side-col side-col-left">
+      <img src="/blog/images/bass.png" alt="Bass" class="side-image wiggle-image"/>
+    </div>
+
+    <div class="center-col">
+      <div class="blog">
+        <h1 class="title">Welcome to my blog!</h1>
+        <section class="intro-section">
+          <div class="description">
+            <p>In this blog, I will be posting some stuff I find interesting. Such as the music I'm currently into, my youtube videos, some graphic design work or some stuff I find inspiring </p>
+          </div>
+        </section>
+      </div>
+
+      <div class="sections">
+        <p>What are you interested in?</p>
+        <section class="three-col">
+          <a href={`${base}/music`}>
+            <div class="col"> 
+                <img src={`${base}/images/frutiger_music.jpg`} alt="Bass" class="section-image"/>
+                <p>Music</p>
+              </div>
+          </a>
+          <a href={`${base}/videos`}>
+            <div class="col">
+              <img src={`${base}/images/frutiger_video.png`} alt="Videos" class="section-image"/>
+              <p>Videos</p>
+            </div>
+          </a>
+          <a href={`${base}/art`}>
+            <div class="col"> 
+              <img src={`${base}/images/odilon-redon.webp`} alt="Art" class="section-image"/>
+              <p>Art</p>
+            </div>
+          </a>
+        </section>
+      </div>
+    </div>
+
+    <div class="side-col side-col-right">
+      <img src="/blog/images/guitar.png" alt="Guitar" class="side-image wiggle-image"/>
+    </div>
+  </div>
 </BaseLayout>	
 
 
 <style>
 
+  .page-layout {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+
+    display: grid;
+    grid-template-areas: "left center right";
+    grid-template-columns: minmax(0, 250px) minmax(300px, 700px) minmax(0, 250px);
+    justify-content: center; /* 👈 centra el grid completo si sobra espacio */
+    align-items: start;
+    gap: 1.5rem;
+    padding: 0 2rem;
+  }
+
+  .side-col-left  { grid-area: left; }
+  .center-col     { grid-area: center; }
+  .side-col-right { grid-area: right; }
+
+  .side-col {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-width: 0;
+  }
+
+  .center-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .side-image {
+    max-height: 75vh;
+    width: auto;
+    max-width: 100rem;
+  }
+
   .blog {
-    min-height: 80vh;
+    min-height: 50vh;
+    width: 100%;
+    max-width: 700px;
     padding: 2rem;
     text-align: center;
     border-radius: 16px;
 
-    background: linear-gradient(
-      to bottom,
-      rgba(245, 243, 244, 0.85) 0%,
-      rgba(102, 7, 8, 0.7) 100%
-    );
+    background: white;
     border: 2px solid rgba(245, 243, 244, 0.6);
     box-shadow:
       0 8px 24px rgba(0, 0, 0, 0.3),
@@ -56,16 +122,36 @@ import "../styles/global.css";
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6), 0 2px 4px rgba(0,0,0,0.15);
   }
 
+  .intro-section {
+    display: flex;
+    justify-content: center;
+  }
+
   .description {
-	font-family: 'Play', system-ui;
-	font-size: 1.4rem;
+    font-family: 'Play', system-ui;
+    font-size: 1.4rem;
     margin-top: 4rem;
+    max-width: 600px;
   }
 
   .three-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    }
+
+  .sections {
+    width: 100%;
+    max-width: 700px;
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    background: white;
+    text-align: center;
+  }
+
+  .section-image {
+    max-height: 100px;
   }
 
   .wiggle-image {
@@ -94,18 +180,6 @@ import "../styles/global.css";
   animation: fly1 15s linear infinite;
 }
 
-/*.gif-2 {
-  top: 60%;
-  left: 70%;
-  animation: fly2 20s linear infinite;
-}
-
-.gif-3 {
-  top: 30%;
-  left: 40%;
-  animation: fly3 12s linear infinite;
-}*/
-
 @keyframes fly1 {
   0%   { transform: translate(0, 0); }
   25%  { transform: translate(60vw, 20vh); }
@@ -113,19 +187,14 @@ import "../styles/global.css";
   75%  { transform: translate(70vw, 10vh); }
   100% { transform: translate(0, 0); }
 }
-/*
-@keyframes fly2 {
-  0%   { transform: translate(0, 0); }
-  25%  { transform: translate(-40vw, 30vh); }
-  50%  { transform: translate(-60vw, -20vh); }
-  75%  { transform: translate(-10vw, -40vh); }
-  100% { transform: translate(0, 0); }
-}
 
-@keyframes fly3 {
-  0%   { transform: translate(0, 0); }
-  33%  { transform: translate(30vw, -20vh); }
-  66%  { transform: translate(-20vw, 30vh); }
-  100% { transform: translate(0, 0); }
-}*/
+/* En pantallas pequeñas, ocultamos las columnas laterales para no romper el layout */
+@media (max-width: 900px) {
+  .page-layout {
+    grid-template-columns: 1fr;
+  }
+  .side-col {
+    display: none;
+  }
+}
 </style>

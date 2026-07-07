@@ -81,13 +81,18 @@ const renderedPosts = await Promise.all(
     <div class="posts-feed">
       {renderedPosts.map(({ post, Content }) => (
         <article class="post-card">
-          <h2 class="post-title">{post.data.title}</h2>
-          {post.data.subtitle && <h3 class="subtitle">{post.data.subtitle}</h3>}
-          <p class="post-type">{post.data.type === 'review' ? 'Review' : 'Recommendation'}</p>
-
-          {post.data.coverImage && (
+        <div class="post-header">
+          <div>
+            <h2 class="post-title">{post.data.title}</h2>
+            {post.data.subtitle && <h3 class="subtitle">{post.data.subtitle}</h3>}
+            <p class="post-type">{post.data.type === 'review' ? 'Review' : 'Recommendation'}</p>
+          </div>
+          <div>
+            {post.data.coverImage && (
             <img src={`${base}${post.data.coverImage}`} alt={post.data.title} class="cover-image" />
           )}
+          </div>
+        </div>
 
           <div class="post-content">
             <Content />
@@ -200,6 +205,13 @@ const renderedPosts = await Promise.all(
     box-shadow: 0 1px 1px rgba(0,0,0,0.3);
   }
 
+  .post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
   .posts-feed {
     display: flex;
     flex-direction: column;
@@ -244,7 +256,7 @@ const renderedPosts = await Promise.all(
 
   .cover-image {
     width: 100%;
-    max-width: 200px;
+    max-width: 100px;
     border-radius: 8px;
     display: block;
     margin: 0.5rem 0 1rem 0;
@@ -258,23 +270,25 @@ const renderedPosts = await Promise.all(
     max-width: 250px;
     border-radius: 8px;
     display: block;
-    margin: 1rem 0;
   }
 
   .post-content :global(p) {
     margin-bottom: 1rem;
     margin-top: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
     font-family: 'Play', system-ui;
+    text-align: justify;
   }
 
-  .post-content blockquote {
-    margin: 2rem 0;
+  .post-content :global(blockquote) {
+    margin-left: 1rem;
     padding-left: 1rem;
     border-left: 3px solid #999;
     font-style: italic;
   }
 
-  .post-content blockquote p {
+  .post-content :global(blockquote) p {
     margin-bottom: 1rem; 
     line-height: 1.8;    
   }
