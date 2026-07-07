@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "Esos bichos que nacen de los claveles",
-  "artist": "Los Delinqüentes",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273197a8b87fcdde907e7f0bc03",
-  "progress": 44
+  "isPlaying": false
 }
