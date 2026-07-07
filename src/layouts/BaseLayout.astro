@@ -1,9 +1,14 @@
 ---
 import Header from "../components/Header.astro";
+import SplashText from "../components/SplashText.astro";
 import "../styles/global.css";
 import CollectibleEngine from "../components/CollectibleEngine.astro";
 
-const { backgroundImage = "/images/waves_background.jpg", noScroll = false } = Astro.props;
+const {
+  backgroundImage = "/images/waves_background.jpg",
+  noScroll = false,
+  splashText,
+} = Astro.props;
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -19,6 +24,7 @@ const base = import.meta.env.BASE_URL;
   </head>
   <body class:list={[{ "no-scroll": noScroll }]}>
     <Header />
+    {splashText !== false && <SplashText text={splashText} />}
     <main style={`background-image: url('${backgroundImage}')`}>
       <slot />
     </main>

@@ -8,7 +8,7 @@ const artPosts = await getCollection('art');
 const sortedArt = artPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 ---
 
-<BaseLayout backgroundImage="/images/waves_background.jpg">
+<BaseLayout backgroundImage="/images/waves_background.jpg" splashText={false}>
   <h1 class="page-title">Art</h1>
   <h3 class="page-subtitle">Artistic stuff I find cool, and maybe in a future, some graphic design of mine</h3>
 

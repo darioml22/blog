@@ -22,7 +22,7 @@ import "../styles/global.css";
         <h1 class="title">Welcome to my blog!</h1>
         <section class="intro-section">
           <div class="description">
-            <p>In this blog, I will be posting some stuff I find interesting. Such as the music I'm currently into, my youtube videos, some graphic design work or some stuff I find inspiring </p>
+            <p>In this blog, I will be posting some stuff I find interesting, such as the music I'm currently into, my youtube videos, some graphic design work or just some stuff I find inspiring </p>
           </div>
         </section>
       </div>
@@ -71,7 +71,7 @@ import "../styles/global.css";
     display: grid;
     grid-template-areas: "left center right";
     grid-template-columns: minmax(0, 250px) minmax(300px, 700px) minmax(0, 250px);
-    justify-content: center; /* 👈 centra el grid completo si sobra espacio */
+    justify-content: center;
     align-items: start;
     gap: 1.5rem;
     padding: 0 2rem;
@@ -98,7 +98,7 @@ import "../styles/global.css";
   .side-image {
     max-height: 75vh;
     width: auto;
-    max-width: 100rem;
+    height: 80rem;
   }
 
   .blog {
@@ -188,7 +188,6 @@ import "../styles/global.css";
   100% { transform: translate(0, 0); }
 }
 
-/* En pantallas pequeñas, ocultamos las columnas laterales para no romper el layout */
 @media (max-width: 900px) {
   .page-layout {
     grid-template-columns: 1fr;

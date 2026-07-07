@@ -1,0 +1,61 @@
+---
+const splashes = [
+  "WIP!",
+  "Bass is the best",
+  "Todo pa la pachamama",
+  "Gora ETA Askatasuna!",
+  "Find the sunflower!",
+  "1, 2, 3, 4, 5, 6, 7, 8, 9, 10",
+  "Also try Terraria!",
+  "Follow the Kerouac road!",
+];
+
+interface Props {
+  text?: string;
+}
+
+const { text } = Astro.props as Props;
+
+const displaySplash = text ?? splashes[Math.floor(Math.random() * splashes.length)];
+---
+
+<div class="splash-text">{displaySplash}</div>
+
+<style>
+  .splash-text {
+    position: absolute;
+    top: 4.5rem;
+    right: 20rem;
+    font-family: 'Minecraft', 'VT323', system-ui;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: #ffff00;
+    text-shadow:
+      2px 2px 0 #3f3f00,
+      -1px -1px 0 #3f3f00,
+      1px -1px 0 #3f3f00,
+      -1px 1px 0 #3f3f00;
+    transform: rotate(18deg);
+    transform-origin: center;
+    animation: splash-pulse 0.7s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 60;
+    max-width: 220px;
+    text-align: center;
+  }
+
+  @keyframes splash-pulse {
+    0%   { transform: rotate(18deg) scale(1); }
+    100% { transform: rotate(18deg) scale(1.12); }
+  }
+
+  @media (max-width: 700px) {
+    .splash-text {
+      font-size: 1rem;
+      max-width: 140px;
+      right: 1rem;
+      top: 4rem;
+    }
+  }
+</style>
