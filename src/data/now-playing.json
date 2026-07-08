@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "Positive Vibration",
-  "artist": "Bob Marley & The Wailers",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b2730f3addbb970933e156898fc7",
-  "progress": 53
+  "isPlaying": false
 }
