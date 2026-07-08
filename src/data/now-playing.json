@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "How Cold Love Is",
+  "artist": "Fontaines D.C.",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273b23737878e75582c2e255029",
+  "progress": 19
 }
