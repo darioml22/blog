@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "Fools Gold - Remastered 2009",
-  "artist": "The Stone Roses",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273cf1f6466a493eb73d6d9d280",
-  "progress": 100
+  "isPlaying": false
 }
