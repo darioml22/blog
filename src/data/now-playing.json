@@ -1,7 +1,7 @@
 {
-  "isPlaying": false,
-  "song": "Mamma Mia",
-  "artist": "ABBA",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b27392d0747a634fcc351c6ac3c2",
-  "progress": 92
+  "isPlaying": true,
+  "song": "Positive Vibration",
+  "artist": "Bob Marley & The Wailers",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b2730f3addbb970933e156898fc7",
+  "progress": 53
 }
