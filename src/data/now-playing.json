@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "I Remember Nothing - 2019 Digital Master",
+  "artist": "Joy Division",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b27327cc8b0ed297111f53009772",
+  "progress": 96
 }
