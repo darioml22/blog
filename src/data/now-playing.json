@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": false,
+  "song": "Ya No Hay Verano",
+  "artist": "Depresión Sonora",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273c4cba025ab49f6f37b728ac5",
+  "progress": 97
 }
