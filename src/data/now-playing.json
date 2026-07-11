@@ -1,7 +1,7 @@
 {
-  "isPlaying": false,
-  "song": "Ya No Hay Verano",
-  "artist": "Depresión Sonora",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273c4cba025ab49f6f37b728ac5",
-  "progress": 97
+  "isPlaying": true,
+  "song": "Video Killed The Radio Star",
+  "artist": "The Buggles",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273983bb3e3f0c66b9b89a832fa",
+  "progress": 46
 }
