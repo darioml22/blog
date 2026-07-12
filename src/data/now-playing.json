@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "Correo",
-  "artist": "Mala Gestión",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273fcc724aac2af5b1e0e65b7ea",
-  "progress": 52
+  "isPlaying": false
 }
