@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "Cosas Que Es Mejor No Hacer",
-  "artist": "Mirafiori",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b27340793aec280618ad32d103ec",
-  "progress": 80
+  "isPlaying": false
 }
