@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "Песня красноармейца",
+  "artist": "Grazhdanskaya Oborona",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273a3cf5782980ba4f1aa72925b",
+  "progress": 100
 }
