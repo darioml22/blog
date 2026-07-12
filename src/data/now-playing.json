@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "Cinco Minutos",
+  "artist": "Mirafiori",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b27340793aec280618ad32d103ec",
+  "progress": 31
 }
