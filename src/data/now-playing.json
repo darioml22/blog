@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "Que Puedo Hacer",
+  "artist": "Los Planetas",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273e37e8a53148c4a6fc76916e5",
+  "progress": 45
 }
