@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "The Sound And The Summer",
+  "artist": "Suede",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273faef555520c2c25dc32f9cb5",
+  "progress": 43
 }
