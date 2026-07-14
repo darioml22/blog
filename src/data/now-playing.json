@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": false,
+  "song": "Sacerdotes - Remastered 2016",
+  "artist": "Enrique Morente, Tomatito, Montoyita",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b27308c826a421137a7ac299dcfa",
+  "progress": 43
 }
