@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "Daphne Descends",
-  "artist": "The Smashing Pumpkins",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273ffc132d73843293bd57cc115",
-  "progress": 76
+  "isPlaying": false
 }
