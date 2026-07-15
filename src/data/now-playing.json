@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "El Centro del Cerebro",
-  "artist": "Los Planetas",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b27398228201fc9f2d553b4ba1d9",
-  "progress": 81
+  "isPlaying": false
 }
