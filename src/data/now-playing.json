@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "\"Heroes\" - 2017 Remaster",
+  "artist": "David Bowie",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273204f41d52743c6a9efd62985",
+  "progress": 51
 }
