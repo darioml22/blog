@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": false,
+  "song": "Mamá",
+  "artist": "Extremoduro",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273821ade3ac1a19d176e6167be",
+  "progress": 42
 }
