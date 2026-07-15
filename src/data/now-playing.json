@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "Parte De Lo Que Me Debes",
-  "artist": "Los Planetas",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b2735d8ee4df2907af442fb22377",
-  "progress": 100
+  "isPlaying": false
 }
