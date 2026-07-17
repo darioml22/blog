@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "Espacio vacío",
+  "artist": "Septimo sello",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273385363bd0f093619f67c39b1",
+  "progress": 56
 }
