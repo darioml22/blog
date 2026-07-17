@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "Discovering Meaning",
+  "artist": "R Eugene",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273fb7dc65948ed77cd5a1403cb",
+  "progress": 3
 }
