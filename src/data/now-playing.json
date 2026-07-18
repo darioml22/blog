@@ -1,7 +1,7 @@
 {
-  "isPlaying": false,
-  "song": "Uno más",
+  "isPlaying": true,
+  "song": "El día de los bomberos",
   "artist": "Los Delinqüentes",
   "albumArt": "https://i.scdn.co/image/ab67616d0000b273197a8b87fcdde907e7f0bc03",
-  "progress": 9
+  "progress": 89
 }
