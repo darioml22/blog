@@ -1,7 +1,7 @@
 {
-  "isPlaying": true,
-  "song": "Espacio vacío",
-  "artist": "Septimo sello",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273385363bd0f093619f67c39b1",
-  "progress": 90
+  "isPlaying": false,
+  "song": "Uno más",
+  "artist": "Los Delinqüentes",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273197a8b87fcdde907e7f0bc03",
+  "progress": 9
 }
