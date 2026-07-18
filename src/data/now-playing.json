@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "Be My Baby",
+  "artist": "The Ronettes",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273b298efc29df3b69ec3f0d675",
+  "progress": 36
 }
