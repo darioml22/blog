@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "No Te Encuentro",
+  "artist": "Porter",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273aed93f752aaa2067c7557ac8",
+  "progress": 79
 }
