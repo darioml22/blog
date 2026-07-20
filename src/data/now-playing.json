@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "Drinking and Driving",
-  "artist": "Black Flag",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b27363a0a7643835d4868e6c701e",
-  "progress": 85
+  "isPlaying": false
 }
