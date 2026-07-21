@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "Lucretia My Reflection - Vinyl Version",
+  "artist": "Sisters of Mercy",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b2737f16b5473cc45f755ec03c82",
+  "progress": 44
 }
