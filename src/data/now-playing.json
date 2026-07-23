@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "Can't Stop",
-  "artist": "Red Hot Chili Peppers",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273de1af2785a83cc660155a0c4",
-  "progress": 6
+  "isPlaying": false
 }
