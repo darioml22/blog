@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": false,
+  "song": "Estrella Solitaria",
+  "artist": "Triángulo de Amor Bizarro",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b27366762bc8aa03290254a7fc32",
+  "progress": 1
 }
