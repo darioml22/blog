@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "Host of a Ghost",
+  "artist": "Porter",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b27366c7aa2a4a1178c2398b06a0",
+  "progress": 60
 }
