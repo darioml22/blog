@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "GRAN TURISMO",
-  "artist": "Trashiii",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273a80679733a850498c4e0ddf1",
-  "progress": 14
+  "isPlaying": false
 }
