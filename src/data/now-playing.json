@@ -1,7 +1,7 @@
 {
-  "isPlaying": true,
-  "song": "Tierra Trágame",
-  "artist": "el diablo de shanghai",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273f22735a97d376bc2a76722da",
-  "progress": 1
+  "isPlaying": false,
+  "song": "Sounds Like Suzie",
+  "artist": "Alison's Halo",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b2739e11496075ffb7b2b510faf9",
+  "progress": 60
 }
