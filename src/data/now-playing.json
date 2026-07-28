@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "Tierra Trágame",
+  "artist": "el diablo de shanghai",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273f22735a97d376bc2a76722da",
+  "progress": 1
 }
