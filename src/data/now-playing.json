@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "Xtal",
+  "artist": "Aphex Twin",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b27338906032688bb13b135ce19a",
+  "progress": 37
 }
