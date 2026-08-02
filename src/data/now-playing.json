@@ -1,7 +1,3 @@
 {
-  "isPlaying": false,
-  "song": "Mora",
-  "artist": "Nürnberg",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b27358835a0f31121d6624b304ce",
-  "progress": 81
+  "isPlaying": false
 }
