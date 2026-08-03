@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "Место для шага вперёд",
-  "artist": "Kino",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273c6cac46311272073b84529cf",
-  "progress": 37
+  "isPlaying": false
 }
