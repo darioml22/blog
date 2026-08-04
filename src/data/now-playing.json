@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "リンダ リンダ",
+  "artist": "パ-ランマウム",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b2738d1c102d9f6bdabab05cb59e",
+  "progress": 34
 }
