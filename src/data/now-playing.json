@@ -1,7 +1,7 @@
 {
-  "isPlaying": false,
-  "song": "Спокойная ночь",
-  "artist": "Kino",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b27381dd57adc240bd3ebe35d02c",
-  "progress": 30
+  "isPlaying": true,
+  "song": "Voodoo Child (Slight Return)",
+  "artist": "Jimi Hendrix",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273522088789d49e216d9818292",
+  "progress": 51
 }
