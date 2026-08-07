@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "Voodoo Child (Slight Return)",
-  "artist": "Jimi Hendrix",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273522088789d49e216d9818292",
-  "progress": 51
+  "isPlaying": false
 }
