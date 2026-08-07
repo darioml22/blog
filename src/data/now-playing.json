@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "Thieves like Us - 12\" Extended",
+  "artist": "New Order",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273408739ba1ad5bccbfeda5ae1",
+  "progress": 13
 }
