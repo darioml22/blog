@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "Segundo Premio",
+  "artist": "Los Planetas",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b2735d8ee4df2907af442fb22377",
+  "progress": 0
 }
