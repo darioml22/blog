@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": false,
+  "song": "Спокойная ночь",
+  "artist": "Kino",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b27381dd57adc240bd3ebe35d02c",
+  "progress": 30
 }
