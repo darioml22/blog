@@ -1,7 +1,7 @@
 {
-  "isPlaying": true,
-  "song": "Segundo Premio",
+  "isPlaying": false,
+  "song": "De Viaje",
   "artist": "Los Planetas",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b2735d8ee4df2907af442fb22377",
-  "progress": 0
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273e37e8a53148c4a6fc76916e5",
+  "progress": 16
 }
