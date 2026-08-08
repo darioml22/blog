@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": false,
+  "song": "Mi Habitación",
+  "artist": "La Habitación Roja",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b2730b6b2ea306a10a968e19d46e",
+  "progress": 96
 }
