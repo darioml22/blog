@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "Mamma Mia",
-  "artist": "ABBA",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b27392d0747a634fcc351c6ac3c2",
-  "progress": 91
+  "isPlaying": false
 }
