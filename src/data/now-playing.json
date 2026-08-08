@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "Baby Lemonade",
+  "artist": "Syd Barrett",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273894902fca30271ff96ace145",
+  "progress": 100
 }
