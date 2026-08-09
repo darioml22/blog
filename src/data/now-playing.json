@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "Continúa",
-  "artist": "Cupido",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273b3714eebaabcff31a5d7dee3",
-  "progress": 30
+  "isPlaying": false
 }
