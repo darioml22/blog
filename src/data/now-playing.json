@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "Lo dejo",
+  "artist": "Cupido",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b27341f2acc39e0b401858c7ff5a",
+  "progress": 31
 }
