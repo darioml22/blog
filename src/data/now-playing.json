@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": false,
+  "song": "OX4 - 2001 Remaster",
+  "artist": "Ride",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273a392acf01a6c97cddf000f56",
+  "progress": 4
 }
