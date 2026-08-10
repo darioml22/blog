@@ -1,7 +1,7 @@
 {
-  "isPlaying": false,
-  "song": "Smooth (feat. Rob Thomas)",
-  "artist": "Santana, Rob Thomas",
+  "isPlaying": true,
+  "song": "El Farol",
+  "artist": "Santana",
   "albumArt": "https://i.scdn.co/image/ab67616d0000b27347eb3ea5a92904c19e102e54",
-  "progress": 35
+  "progress": 78
 }
