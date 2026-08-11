@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "Seguidores",
-  "artist": "Triángulo de Amor Bizarro",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273799aeef9fc26a9558bbc5cd4",
-  "progress": 99
+  "isPlaying": false
 }
