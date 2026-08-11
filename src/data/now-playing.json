@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": false,
+  "song": "Lobo-hombre en París",
+  "artist": "La Unión",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b2730f83d2ef74cfad029520be96",
+  "progress": 98
 }
