@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": false,
+  "song": "Tu Puñal",
+  "artist": "CARABALLO",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b27396e7c312233e4b4cc8bfa125",
+  "progress": 4
 }
