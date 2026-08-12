@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": false,
+  "song": "Age of Consent - 2015 Remaster",
+  "artist": "New Order",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273a0bb93884823982d57cb2004",
+  "progress": 57
 }
