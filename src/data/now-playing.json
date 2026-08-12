@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "Supermassive Black Hole",
-  "artist": "Muse",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b27328933b808bfb4cbbd0385400",
-  "progress": 44
+  "isPlaying": false
 }
