@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": false,
+  "song": "Bring on the Dancing Horses",
+  "artist": "Echo & the Bunnymen",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b2738c3bd313f076150e2d9299c2",
+  "progress": 19
 }
