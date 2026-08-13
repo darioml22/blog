@@ -1,7 +1,7 @@
 {
-  "isPlaying": false,
-  "song": "Bizarre Love Triangle",
+  "isPlaying": true,
+  "song": "As It Is When It Was",
   "artist": "New Order",
   "albumArt": "https://i.scdn.co/image/ab67616d0000b273530a2c5dd17d2ddf8edc2978",
-  "progress": 54
+  "progress": 35
 }
