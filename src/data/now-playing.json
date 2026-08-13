@@ -1,7 +1,7 @@
 {
-  "isPlaying": true,
-  "song": "La Caja Del Diablo",
-  "artist": "Los Planetas",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273e37e8a53148c4a6fc76916e5",
-  "progress": 15
+  "isPlaying": false,
+  "song": "Bizarre Love Triangle",
+  "artist": "New Order",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273530a2c5dd17d2ddf8edc2978",
+  "progress": 54
 }
