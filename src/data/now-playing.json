@@ -1,7 +1,7 @@
 {
-  "isPlaying": false,
-  "song": "La Maquina de Escribir",
-  "artist": "Los Planetas",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273c1a34e22dcfc552631fc4d53",
-  "progress": 36
+  "isPlaying": true,
+  "song": "Dozen",
+  "artist": "Alison's Halo",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b2739e11496075ffb7b2b510faf9",
+  "progress": 100
 }
