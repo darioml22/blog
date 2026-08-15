@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "1963",
-  "artist": "New Order",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273408739ba1ad5bccbfeda5ae1",
-  "progress": 91
+  "isPlaying": false
 }
