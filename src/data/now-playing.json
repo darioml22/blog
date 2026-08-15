@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "Закрой за мной дверь, я ухожу",
+  "artist": "Kino",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b2731583df4382d249e69e3daa53",
+  "progress": 17
 }
