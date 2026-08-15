@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "Run - 2015 Remaster",
+  "artist": "New Order",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b2735ac2c6a71a5882025e438424",
+  "progress": 78
 }
