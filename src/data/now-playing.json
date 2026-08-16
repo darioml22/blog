@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "STAY YOUNG STAY PUNK",
+  "artist": "FIVE STATE DRIVE",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b2734de554061ce3046feefbbd5f",
+  "progress": 32
 }
