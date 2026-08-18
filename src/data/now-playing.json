@@ -1,7 +1,7 @@
 {
-  "isPlaying": false,
-  "song": "La Noche Inventada",
+  "isPlaying": true,
+  "song": "El Bello Verano",
   "artist": "Family",
   "albumArt": "https://i.scdn.co/image/ab67616d0000b273cee1feb9d4603860bb665bf6",
-  "progress": 22
+  "progress": 56
 }
