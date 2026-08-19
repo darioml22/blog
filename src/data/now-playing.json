@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": false,
+  "song": "La La Love You",
+  "artist": "Pixies",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b2730ab3c2a306c614fae36ff1d6",
+  "progress": 66
 }
