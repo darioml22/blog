@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "Al Otro Lado",
-  "artist": "Family",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273cee1feb9d4603860bb665bf6",
-  "progress": 14
+  "isPlaying": false
 }
