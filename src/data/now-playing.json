@@ -1,7 +1,7 @@
 {
-  "isPlaying": false,
-  "song": "Espiral",
-  "artist": "Porter",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273aed93f752aaa2067c7557ac8",
-  "progress": 82
+  "isPlaying": true,
+  "song": "Qué puedo hacer",
+  "artist": "Los Planetas, Depresión Sonora",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273c6e00b3f57f6455ef1222c5e",
+  "progress": 39
 }
