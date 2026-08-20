@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "Soy Lo Peor",
+  "artist": "Depresión Sonora, Bb trickz",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273b669a0ab6ece8427f71870e5",
+  "progress": 42
 }
