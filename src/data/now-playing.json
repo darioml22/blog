@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "Mejor no",
+  "artist": "roomtrash6, cybernene, CHRIST DILLINGER, PatataOnStereo",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273b5284bb8956d2a5638eaa3d1",
+  "progress": 4
 }
