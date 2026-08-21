@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "4 Daisy",
-  "artist": "rusowsky",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273dc9c43138a621ee63a7bc863",
-  "progress": 26
+  "isPlaying": false
 }
