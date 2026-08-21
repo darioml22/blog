@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": false,
+  "song": "(ecco)",
+  "artist": "rusowsky",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273dc9c43138a621ee63a7bc863",
+  "progress": 27
 }
