@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "A la sombra de mi sombra",
+  "artist": "Extrechinato y Tu",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b27330d46cf7339a39d1432dc3d4",
+  "progress": 41
 }
