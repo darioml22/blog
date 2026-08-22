@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "Piel",
-  "artist": "Yung Nick, TylerB, John Põ",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b27323f3fd07192421bf87b32e18",
-  "progress": 18
+  "isPlaying": false
 }
