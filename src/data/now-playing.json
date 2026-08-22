@@ -1,7 +1,7 @@
 {
-  "isPlaying": false,
-  "song": "Ceremony (Version 1) - 2019 Remaster",
+  "isPlaying": true,
+  "song": "Bizarre Love Triangle",
   "artist": "New Order",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273ef0ace7e95669cdaca7a26b5",
-  "progress": 1
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273530a2c5dd17d2ddf8edc2978",
+  "progress": 65
 }
