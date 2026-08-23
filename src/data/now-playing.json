@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "mwah :3",
+  "artist": "rusowsky, Dinamarca",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b2735aa59ae35024acb520b5d559",
+  "progress": 73
 }
