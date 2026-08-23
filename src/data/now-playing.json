@@ -1,7 +1,7 @@
 {
-  "isPlaying": true,
-  "song": "Video Killed The Radio Star",
-  "artist": "The Buggles",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273983bb3e3f0c66b9b89a832fa",
-  "progress": 33
+  "isPlaying": false,
+  "song": "Dulce introducción al caos",
+  "artist": "Extremoduro",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273f015facadafea5614a6b20c2",
+  "progress": 64
 }
