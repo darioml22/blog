@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": false,
+  "song": "Galaxia",
+  "artist": "Cupido",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273212429aa33b732a8587d4c19",
+  "progress": 79
 }
