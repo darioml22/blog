@@ -1,7 +1,7 @@
 {
-  "isPlaying": false,
-  "song": "Cling Film",
-  "artist": "Sea Urchins",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b2732ee67fec7d4eb7d34aa9a71c",
-  "progress": 15
+  "isPlaying": true,
+  "song": "Я не буду спать",
+  "artist": "Автоспорт",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b27314049b534f8ac04601a6da5f",
+  "progress": 95
 }
