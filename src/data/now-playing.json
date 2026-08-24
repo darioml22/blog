@@ -1,7 +1,7 @@
 {
-  "isPlaying": false,
-  "song": "#HelloKitty^^",
-  "artist": "Faxu",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273fffa93adcfebb039a10fb3a3",
-  "progress": 3
+  "isPlaying": true,
+  "song": "As It Is When It Was",
+  "artist": "New Order",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273530a2c5dd17d2ddf8edc2978",
+  "progress": 46
 }
