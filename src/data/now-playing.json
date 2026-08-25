@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "メトロ",
+  "artist": "Advantage Lucy",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273e6514babfefbd21ac0bfc892",
+  "progress": 11
 }
