@@ -1,7 +1,3 @@
 {
-  "isPlaying": false,
-  "song": "El Oro",
-  "artist": "E.V.A",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273b5b5d4bb95abbb847142700e",
-  "progress": 18
+  "isPlaying": false
 }
