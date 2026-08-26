@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "En Mis Pies",
-  "artist": "LA ÉLITE",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273300d5975ddd5a21aa13e0bed",
-  "progress": 22
+  "isPlaying": false
 }
