@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "Equipo de demolición",
-  "artist": "sistema de entretenimiento",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b2738a4574a820aae07770cab833",
-  "progress": 64
+  "isPlaying": false
 }
