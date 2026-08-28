@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "LITTLE BUSTERS",
-  "artist": "the pillows",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b2734b5dcbfa6896af33e2f8b893",
-  "progress": 44
+  "isPlaying": false
 }
