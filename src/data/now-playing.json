@@ -1,7 +1,7 @@
 {
-  "isPlaying": true,
-  "song": "El Buen Vigía",
-  "artist": "Family",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273cee1feb9d4603860bb665bf6",
-  "progress": 3
+  "isPlaying": false,
+  "song": "La Historia De Juan Castillo",
+  "artist": "Los Chichos",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b2732eed8e33da08e5a26eabf03f",
+  "progress": 5
 }
