@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "Aeropuerto",
+  "artist": "Los Planetas",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273c1a34e22dcfc552631fc4d53",
+  "progress": 97
 }
