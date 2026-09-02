@@ -1,7 +1,3 @@
 {
-  "isPlaying": false,
-  "song": "La Historia De Juan Castillo",
-  "artist": "Los Chichos",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b2732eed8e33da08e5a26eabf03f",
-  "progress": 5
+  "isPlaying": false
 }
