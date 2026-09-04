@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "LIAR?",
-  "artist": "rusowsky, Kevin Abstract",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273dc9c43138a621ee63a7bc863",
-  "progress": 15
+  "isPlaying": false
 }
