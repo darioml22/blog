@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "40 Days",
-  "artist": "Slowdive",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273f6e31941d10e4819d290af41",
-  "progress": 36
+  "isPlaying": false
 }
