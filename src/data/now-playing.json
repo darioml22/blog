@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "Ha Sido Divertido",
-  "artist": "Nudozurdo",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273407a55d644f150d4eead61b1",
-  "progress": 42
+  "isPlaying": false
 }
