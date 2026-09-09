@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "La mataré - 2013 Remastered Version",
+  "artist": "Loquillo Y Los Trogloditas, Loquillo",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b2735c5172d26e1c79caa9e44918",
+  "progress": 99
 }
