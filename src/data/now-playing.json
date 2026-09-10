@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": false,
+  "song": "Come in Alone",
+  "artist": "my bloody valentine",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b27345d60424109af911a1a2b1ef",
+  "progress": 0
 }
