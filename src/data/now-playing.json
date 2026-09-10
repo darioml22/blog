@@ -1,7 +1,7 @@
 {
-  "isPlaying": false,
-  "song": "Come in Alone",
-  "artist": "my bloody valentine",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b27345d60424109af911a1a2b1ef",
-  "progress": 0
+  "isPlaying": true,
+  "song": "DB",
+  "artist": "Los Planetas",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273c1a34e22dcfc552631fc4d53",
+  "progress": 62
 }
