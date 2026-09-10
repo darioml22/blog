@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "La primavera trompetera",
+  "artist": "Los Delinqüentes",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b27300da20309aff30533c9ba835",
+  "progress": 18
 }
