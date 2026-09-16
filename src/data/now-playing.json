@@ -1,7 +1,3 @@
 {
-  "isPlaying": false,
-  "song": "Eno",
-  "artist": "Gnoomes",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b27397791800c8c049baeb6b7d1e",
-  "progress": 74
+  "isPlaying": false
 }
