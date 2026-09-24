@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": false,
+  "song": "Un sentimiento importante",
+  "artist": "Mujeres",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b27327a2a16c8b3d897906f90366",
+  "progress": 8
 }
