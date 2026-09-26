@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "Zejść",
+  "artist": "wane",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b27363f98a1eed4a6cbce8686eca",
+  "progress": 51
 }
