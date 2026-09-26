@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "¿Qué Tendrá?",
-  "artist": "Rata Negra",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b2730295c45d3509b8e42da98f3a",
-  "progress": 4
+  "isPlaying": false
 }
