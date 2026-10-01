@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": false,
+  "song": "Revolucio´n Canibal",
+  "artist": "Juanita y Los Feos",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273f3ae93bd368610e925555d50",
+  "progress": 25
 }
