@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "Normal",
+  "artist": "Carolina Durante",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b27339328fc17d747c97ae61b4d8",
+  "progress": 23
 }
