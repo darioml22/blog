@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "Невыносимая лёгкость бытия",
-  "artist": "Grazhdanskaya Oborona",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273cd824dd4c70a24577dfddce3",
-  "progress": 7
+  "isPlaying": false
 }
