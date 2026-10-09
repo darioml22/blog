@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "First Rapper",
+  "artist": "roomtrash6, Seepy",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273a760e556b1a9e42457865391",
+  "progress": 87
 }
