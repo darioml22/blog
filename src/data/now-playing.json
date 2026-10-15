@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "Bienvenido al Caos",
-  "artist": "Depresión Sonora",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b2731c42f8929d7085610638c69f",
-  "progress": 58
+  "isPlaying": false
 }
