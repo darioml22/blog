@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": true,
+  "song": "En un Mundo Tan Pequeño",
+  "artist": "Mercromina",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273d377a490133a51d5029144f1",
+  "progress": 41
 }
