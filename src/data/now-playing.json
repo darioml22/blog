@@ -1,7 +1,7 @@
 {
-  "isPlaying": false,
-  "song": "Jesus",
-  "artist": "Los Planetas",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b273e37e8a53148c4a6fc76916e5",
-  "progress": 58
+  "isPlaying": true,
+  "song": "Lo que dicte el corazón",
+  "artist": "La Buena Vida",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273c3989ad4d001a3cba48ff971",
+  "progress": 61
 }
