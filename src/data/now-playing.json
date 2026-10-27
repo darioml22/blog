@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": false,
+  "song": "Triángulo de Amor Bizarro",
+  "artist": "Triángulo de Amor Bizarro",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b2738ab32f74707001f9838c7b58",
+  "progress": 2
 }
