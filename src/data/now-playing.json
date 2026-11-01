@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "Pesadilla En El Parque De Atracciones",
-  "artist": "Los Planetas",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b2734f28dbcb2035f670c7264366",
-  "progress": 39
+  "isPlaying": false
 }
