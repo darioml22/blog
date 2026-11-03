@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": false,
+  "song": "Primavera 0 - Remasterizado 2007",
+  "artist": "Soda Stereo",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b273b755f1b1b4410d404fe21167",
+  "progress": 78
 }
