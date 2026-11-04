@@ -1,7 +1,3 @@
 {
-  "isPlaying": true,
-  "song": "The 15th - 2006 Remastered Version",
-  "artist": "Wire",
-  "albumArt": "https://i.scdn.co/image/ab67616d0000b2731b686012471336aa93fd0c7d",
-  "progress": 99
+  "isPlaying": false
 }
