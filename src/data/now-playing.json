@@ -1,3 +1,7 @@
 {
-  "isPlaying": false
+  "isPlaying": false,
+  "song": "Come On, Come Over",
+  "artist": "Jaco Pastorius",
+  "albumArt": "https://i.scdn.co/image/ab67616d0000b2730d355251e53550170f626ce1",
+  "progress": 50
 }
